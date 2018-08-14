@@ -6,4 +6,4 @@ before-script:
   - composer install --no-interaction
 script:
   - cp .env.travis .env
-  - /home/travis/build/guicunha/promocode/vendor/bin/phpunit
+  - ./home/travis/build/guicunha/promocode/vendor/bin/phpunit
