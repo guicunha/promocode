@@ -11,4 +11,7 @@ script:
   - cp .env.travis .env
   - ls -al
   - pwd
-  - php vendor/phpunit/phpunit/phpunit
+  - php vendor/phpunit/phpunit/phpunit --coverage-clover=coverage.xml
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash) -t 990886d7-d622-4013-aaf2-4a20b79de93a
