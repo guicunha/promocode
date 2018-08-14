@@ -1,6 +1,6 @@
 # PromoCode - Coupons Builder
 
-[![Build Status](https://travis-ci.org/guicunha/promocode.svg?branch=master)](https://travis-ci.org/guicunha/promocode) [![StyleCI](https://github.styleci.io/repos/144652939/shield?branch=master)](https://github.styleci.io/repos/144652939) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/guicunha/promocode/issues) [![Maintainability](https://api.codeclimate.com/v1/badges/b8f37759c6a3a32ae925/maintainability)](https://codeclimate.com/github/guicunha/promocode/maintainability)
+[![Build Status](https://travis-ci.org/guicunha/promocode.svg?branch=master)](https://travis-ci.org/guicunha/promocode) [![StyleCI](https://github.styleci.io/repos/144652939/shield?branch=master)](https://github.styleci.io/repos/144652939) [![Maintainability](https://api.codeclimate.com/v1/badges/b8f37759c6a3a32ae925/maintainability)](https://codeclimate.com/github/guicunha/promocode/maintainability) [![codecov](https://codecov.io/gh/guicunha/promocode/branch/master/graph/badge.svg)](https://codecov.io/gh/guicunha/promocode)
 > This project is an implementation of several PHP functions, using Laravel Framework.
 
 A brief description of your project, what it is used for.
