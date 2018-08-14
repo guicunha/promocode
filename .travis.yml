@@ -6,4 +6,5 @@ before-script:
   - composer install --no-interaction
 script:
   - cp .env.travis .env
-  - $COMPOSER_BIN_DIR/phpunit
+  - ls -al
+  - pwd
