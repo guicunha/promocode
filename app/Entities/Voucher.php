@@ -9,8 +9,6 @@ use Prettus\Repository\Traits\TransformableTrait;
 
 /**
  * Class Voucher.
- *
- * @package namespace App\Entities;
  */
 class Voucher extends Model implements Transformable
 {
@@ -28,7 +26,7 @@ class Voucher extends Model implements Transformable
         'offer_id',
         'offer_name',
         'expiration',
-        'used_date'
+        'used_date',
     ];
 
     protected $appends = ['on_time'];
@@ -42,20 +40,16 @@ class Voucher extends Model implements Transformable
 
     /**
      * @return bool for each voucher entity checking if this voucher are on time to use (true) or expired (false)
-     *
      */
-
     public function getOnTimeAttribute()
     {
         $now = new \DateTime();
         $nowUnix = $now->getTimestamp();
 
-        if($this->expiration > $nowUnix)
-        {
+        if ($this->expiration > $nowUnix) {
             return true;
         } else {
             return false;
         }
     }
-
 }

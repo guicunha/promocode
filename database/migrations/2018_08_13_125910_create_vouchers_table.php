@@ -1,22 +1,21 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 /**
  * Class CreateVouchersTable.
  */
 class CreateVouchersTable extends Migration
 {
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('vouchers', function(Blueprint $table) {
-
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('vouchers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('promo_code')->unique();
             $table->string('recipient_email');
@@ -29,16 +28,16 @@ class CreateVouchersTable extends Migration
 
             $table->index(['recipient_email', 'promo_code']);
             $table->unique(['recipient_email', 'offer_id']);
-		});
-	}
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('vouchers');
-	}
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('vouchers');
+    }
 }

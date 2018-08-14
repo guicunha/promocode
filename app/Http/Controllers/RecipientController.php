@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class RecipientController extends Controller
 {
-
     /**
      * @var RecipientRepository
      */
@@ -34,14 +33,13 @@ class RecipientController extends Controller
     public function index()
     {
         $recipients = $this->repository->paginate(50);
-        if(request()->wantsJson()){
+        if (request()->wantsJson()) {
             return $recipients;
         }
 
-        $data = ["recipients" => $recipients];
+        $data = ['recipients' => $recipients];
 
-        return view('recipient.recipients_list',$data);
-
+        return view('recipient.recipients_list', $data);
     }
 
     /**
@@ -57,7 +55,8 @@ class RecipientController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -68,7 +67,8 @@ class RecipientController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Recipient as object and voucher as array for this recipient
      */
     public function show($id)
@@ -79,7 +79,8 @@ class RecipientController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -90,7 +91,8 @@ class RecipientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

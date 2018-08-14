@@ -9,8 +9,6 @@ use Prettus\Repository\Traits\TransformableTrait;
 
 /**
  * Class Offer.
- *
- * @package namespace App\Entities;
  */
 class Offer extends Model implements Transformable
 {
@@ -27,7 +25,7 @@ class Offer extends Model implements Transformable
         'description',
         'discount',
         'special_code',
-        'expiration'
+        'expiration',
     ];
 
     protected $dates = ['deleted_at'];
@@ -36,5 +34,4 @@ class Offer extends Model implements Transformable
     {
         return $this->hasMany(Voucher::class);
     }
-
 }

@@ -8,8 +8,6 @@ use Prettus\Repository\Traits\TransformableTrait;
 
 /**
  * Class VoucherLog.
- *
- * @package namespace App\Entities;
  */
 class VoucherLog extends Model implements Transformable
 {
@@ -25,12 +23,11 @@ class VoucherLog extends Model implements Transformable
         'promo_code',
         'short_message',
         'message',
-        'ip_address'
+        'ip_address',
     ];
 
     public function voucher()
     {
-        return $this->hasOne(Voucher::class, "promo_code", "promo_code");
+        return $this->hasOne(Voucher::class, 'promo_code', 'promo_code');
     }
-
 }
