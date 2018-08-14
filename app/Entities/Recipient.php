@@ -38,4 +38,9 @@ class Recipient extends Model implements Transformable
     {
         return $this->hasMany(VoucherLog::class, 'recipient_email', 'email');
     }
+
+    public function path()
+    {
+        return '/recipient' . $this->id;
+    }
 }

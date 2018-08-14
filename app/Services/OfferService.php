@@ -31,7 +31,12 @@ class OfferService
 
     public function create(array $offer)
     {
-        $this->repository->create($offer);
+        return $this->repository->create($offer);
+    }
+
+    public function testSample($numero)
+    {
+        return 1 + $numero;
     }
 
     public function disableOffers(array $offers, $single = false)

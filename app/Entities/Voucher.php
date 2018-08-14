@@ -52,4 +52,9 @@ class Voucher extends Model implements Transformable
             return false;
         }
     }
+
+    public function path()
+    {
+        return '/voucher' . $this->id;
+    }
 }

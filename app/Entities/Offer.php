@@ -34,4 +34,9 @@ class Offer extends Model implements Transformable
     {
         return $this->hasMany(Voucher::class);
     }
+
+    public function path()
+    {
+        return '/offer' . $this->id;
+    }
 }

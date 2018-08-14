@@ -20,7 +20,7 @@ class CreateOffersTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->integer('discount');
-            $table->string('special_code', 4)->unique();
+            $table->string('special_code', 4);
             $table->integer('expiration');
             $table->timestamps();
             $table->softDeletes();

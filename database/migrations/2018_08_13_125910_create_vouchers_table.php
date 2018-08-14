@@ -27,7 +27,6 @@ class CreateVouchersTable extends Migration
             $table->softDeletes();
 
             $table->index(['recipient_email', 'promo_code']);
-            $table->unique(['recipient_email', 'offer_id']);
         });
     }
 
