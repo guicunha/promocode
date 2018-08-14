@@ -1,14 +1,17 @@
 # PromoCode - Coupons Builder
 
-[![Build Status](https://travis-ci.org/guicunha/promocode.svg?branch=master)](https://travis-ci.org/guicunha/promocode) [![StyleCI](https://github.styleci.io/repos/144652939/shield?branch=master)](https://github.styleci.io/repos/144652939)
+[![Build Status](https://travis-ci.org/guicunha/promocode.svg?branch=master)](https://travis-ci.org/guicunha/promocode) [![StyleCI](https://github.styleci.io/repos/144652939/shield?branch=master)](https://github.styleci.io/repos/144652939) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Maintainability](https://api.codeclimate.com/v1/badges/b8f37759c6a3a32ae925/maintainability)](https://codeclimate.com/github/guicunha/promocode/maintainability)
 > This project is an implementation of several PHP functions, using Laravel Framework.
 
 A brief description of your project, what it is used for.
 
 ## Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up &
-running.
+To run this project you will need: 
+- PHP +7.1 
+- Composer
+- PHPUnit
+- MySQL for database (but others database can be used)
 
 ```shell
 commands here
@@ -19,7 +22,12 @@ Here you should say what actually happens when you execute the code above.
 ## Developing
 
 ### Built With
-List main libraries, frameworks used including versions (React, Angular etc...)
+        "php": "^7.1.3"
+        "fideloper/proxy": "^4.0"
+        "laravel/framework": "5.6.*"
+        "laravel/tinker": "^1.0"
+        "phpunit/php-code-coverage": "^6.0"
+        "prettus/l5-repository": "^2.6"
 
 ### Prerequisites
 What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
@@ -31,26 +39,14 @@ Here's a brief intro about what a developer must do in order to start developing
 the project further:
 
 ```shell
-git clone https://github.com/your/your-project.git
-cd your-project/
-packagemanager install
+git clone https://github.com/guicunha/promocode.git
+cd promocode/
+composer self-update
+composer install
 ```
 
 And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here.
 
-### Building
-
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here. for example:
-
-```shell
-./configure
-make
-make install
-```
-
-Here again you should state what actually happens when the code above gets
-executed.
 
 ### Deploying / Publishing
 give instructions on how to build and release a new version
@@ -93,8 +89,18 @@ If the api is external, link to api documentation. If not describe your api incl
 
 ## Database
 
-Explaining what database (and version) has been used. Provide download links.
-Documents your database design and schemas, relations etc... 
+Open-source relational MySQL +5.7 has been used.
+
+For download it on Ubuntu Linux run
+```shell
+sudo apt-get update
+sudo apt install mysql-server
+```
+
+For Windows download de executable by link:
+
+https://dev.mysql.com/downloads/installer/
+ 
 
 ## Licensing
 
