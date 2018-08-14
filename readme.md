@@ -82,9 +82,11 @@ Give an example
 
 Explain your code style and show how to check it.
 
-## Api Reference
+## Documentation
 
-If the api is external, link to api documentation. If not describe your api including authentication methods as well as explaining all the endpoints with their required parameters.
+For a complete documentation and api reference follow the link: 
+
+https://guicunha.github.io/promocode-docs
 
 
 ## Database
@@ -101,6 +103,9 @@ For Windows download de executable by link:
 
 https://dev.mysql.com/downloads/installer/
  
+ The solution is using Laravel Migration to fast adoption, but in some cases you will need a file **.sql** with the database scheme. The scheme can be downloaded in the link:
+ 
+ https://guicunha.github.io/promocode-docs/database-scheme
 
 ## Licensing
 
