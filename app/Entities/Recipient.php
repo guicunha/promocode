@@ -9,8 +9,6 @@ use Prettus\Repository\Traits\TransformableTrait;
 
 /**
  * Class Recipient.
- *
- * @package namespace App\Entities;
  */
 class Recipient extends Model implements Transformable
 {
@@ -26,7 +24,7 @@ class Recipient extends Model implements Transformable
         'first_name',
         'last_name',
         'email',
-        'is_valid'
+        'is_valid',
     ];
 
     protected $dates = ['deleted_at'];
@@ -40,5 +38,4 @@ class Recipient extends Model implements Transformable
     {
         return $this->hasMany(VoucherLog::class, 'recipient_email', 'email');
     }
-
 }

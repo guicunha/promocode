@@ -1,6 +1,6 @@
 # PromoCode - Coupons Builder
 
-[![Build Status](https://travis-ci.org/guicunha/promocode.svg?branch=master)](https://travis-ci.org/guicunha/promocode) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/guicunha/promocode.svg?branch=master)](https://travis-ci.org/guicunha/promocode) [![StyleCI](https://github.styleci.io/repos/144652939/shield?branch=master)](https://github.styleci.io/repos/144652939)
 > This project is an implementation of several PHP functions, using Laravel Framework.
 
 A brief description of your project, what it is used for.

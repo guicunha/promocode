@@ -2,18 +2,16 @@
 
 namespace App\Validators;
 
-use \Prettus\Validator\Contracts\ValidatorInterface;
-use \Prettus\Validator\LaravelValidator;
+use Prettus\Validator\Contracts\ValidatorInterface;
+use Prettus\Validator\LaravelValidator;
 
 /**
  * Class OfferValidator.
- *
- * @package namespace App\Validators;
  */
 class OfferValidator extends LaravelValidator
 {
     /**
-     * Validation Rules
+     * Validation Rules.
      *
      * @var array
      */
