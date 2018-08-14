@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: Guilherme Cunha
  * Date: 13/08/2018
- * Time: 10:28
+ * Time: 10:28.
  */
 
 namespace App\Services;
-
 
 use App\Repositories\RecipientRepository;
 use App\Validators\RecipientValidator;
@@ -15,7 +14,6 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class RecipientService
 {
-
     /**
      * @var RecipientRepository
      */
@@ -46,24 +44,23 @@ class RecipientService
         } catch (ModelNotFoundException $e) {
             return [
               'message' => trans('messages.recipient_not_found'),
-              'success' => false
+              'success' => false,
             ];
         }
-
     }
 
     /**
      * @param $email
      * @param string $record
+     *
      * @return bool
      *
      * Simple check if MX exists
      */
-
     public function checkMxExists($email, $record = 'MX')
     {
-        list($user,$domain) = mb_split('@',$email);
+        list($user, $domain) = mb_split('@', $email);
+
         return checkdnsrr($domain, $record);
     }
-
 }

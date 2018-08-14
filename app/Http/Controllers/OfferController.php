@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class OfferController extends Controller
 {
-
     /**
      * @var OfferRepository
      */
@@ -31,16 +30,14 @@ class OfferController extends Controller
      */
     public function index()
     {
-
         $offers = $this->repository->paginate(50);
-        if(request()->wantsJson()){
+        if (request()->wantsJson()) {
             return $offers;
         }
 
-        $data = ["offers" => $offers];
+        $data = ['offers' => $offers];
 
-        return view('offer.offer_list',$data);
-
+        return view('offer.offer_list', $data);
     }
 
     /**
@@ -56,7 +53,8 @@ class OfferController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,7 +65,8 @@ class OfferController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -78,7 +77,8 @@ class OfferController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -89,8 +89,9 @@ class OfferController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -101,7 +102,8 @@ class OfferController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
