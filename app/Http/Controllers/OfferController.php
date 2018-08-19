@@ -45,7 +45,6 @@ class OfferController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function dashBoard()
     {
         $offers = $this->repository->paginate(50);
@@ -84,7 +83,6 @@ class OfferController extends Controller
      */
     public function show($id)
     {
-
         $offer = $this->service->show($id);
         if (request()->wantsJson()) {
             return $offer;

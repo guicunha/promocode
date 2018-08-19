@@ -18,19 +18,15 @@ class voucherTest extends TestCase
     /** @test */
     public function a_user_can_create_offers()
     {
-
     }
 
     /** @test */
     public function a_user_can_list_offers()
     {
-
     }
 
     /** @test */
     public function a_user_can_list_vouchers_offer()
     {
-
     }
-
 }

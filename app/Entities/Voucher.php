@@ -24,10 +24,10 @@ class Voucher extends Model implements Transformable
         'promo_code',
         'email',
         'offer_id',
-        'offer_name'
+        'offer_name',
     ];
 
-    protected $visible  = [
+    protected $visible = [
         'promo_code',
         'email',
         'offer_id',
@@ -65,6 +65,6 @@ class Voucher extends Model implements Transformable
 
     public function path()
     {
-        return 'voucher/' . $this->id;
+        return 'voucher/'.$this->id;
     }
 }

@@ -79,7 +79,7 @@ class RecipientController extends Controller
         }
 
         $data = [
-          'recipient' => $recipientVouchers
+          'recipient' => $recipientVouchers,
         ];
 
         return view('recipient.recipient_vouchers', $data);

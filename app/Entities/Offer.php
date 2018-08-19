@@ -27,7 +27,7 @@ class Offer extends Model implements Transformable
         'special_code',
         'expiration',
         'is_multiplier',
-        'is_enabled'
+        'is_enabled',
     ];
 
     protected $appends = ['on_time'];
@@ -53,6 +53,6 @@ class Offer extends Model implements Transformable
 
     public function path()
     {
-        return 'offer/' . $this->id;
+        return 'offer/'.$this->id;
     }
 }
