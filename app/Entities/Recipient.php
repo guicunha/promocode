@@ -43,6 +43,6 @@ class Recipient extends Model implements Transformable
 
     public function path()
     {
-        return 'recipient/' . $this->id;
+        return 'recipient/'.$this->id;
     }
 }

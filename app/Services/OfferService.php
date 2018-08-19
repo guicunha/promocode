@@ -43,19 +43,18 @@ class OfferService
 
     public function disableOffers(array $offers, $single = false)
     {
-
     }
 
     public function show($id)
     {
         $offer = $this->repository->with(['vouchers'])->find($id);
         $offer->analytics = $this->analyticsOffer(8);
+
         return $offer;
     }
 
     private function analyticsOffer($id)
     {
-
         $now = Carbon::now()->timestamp;
 
         $used = $this->voucherRepository->scopeQuery(function ($query) use ($id) {
@@ -71,18 +70,14 @@ class OfferService
         })->first();
 
         $data = [
-            'useds_total' => $used->total,
-            'expireds_total' => $expireds->total
+            'useds_total'    => $used->total,
+            'expireds_total' => $expireds->total,
         ];
 
         return $data;
-
     }
-
 
     private function createForAllRecipients(Offer $offer)
     {
-
     }
-
 }

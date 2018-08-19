@@ -83,6 +83,7 @@ class VoucherService
     private function generatePromoCode(Offer $offer)
     {
         $hash = $this->randomAlphanumericString(rand(7, 9), 3);
+
         return $offer->special_code.$hash;
     }
 
@@ -94,6 +95,7 @@ class VoucherService
     private function getRecipients()
     {
         $recipients = $this->recipientRepository->all();
+
         return $recipients;
     }
 
@@ -101,7 +103,7 @@ class VoucherService
     {
         $now = new \DateTime();
         $chars = strtoupper(hash('sha256', $now->getTimestamp()));
+
         return substr(str_shuffle(str_repeat($chars, $repeats)), rand(0, 30), $length);
     }
-
 }
