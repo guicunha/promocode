@@ -49,15 +49,7 @@ class RecipientService
         }
     }
 
-    /**
-     * @param $email
-     * @param string $record
-     *
-     * @return bool
-     *
-     * Simple check if MX exists
-     */
-    public function checkMxExists($email, $record = 'MX')
+    private function checkMxExists($email, $record = 'MX')
     {
         list($user, $domain) = mb_split('@', $email);
 

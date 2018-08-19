@@ -17,16 +17,17 @@ class CreateVouchersTable extends Migration
     {
         Schema::create('vouchers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('promo_code')->unique();
-            $table->string('recipient_email');
+            $table->string('promo_code')->unique(true);
             $table->integer('offer_id');
             $table->string('offer_name');
-            $table->integer('expiration');
-            $table->integer('used_date')->nullable();
+            $table->string('recipient_name');
+            $table->string('email');
+            $table->integer('expiration')->default(0);
+            $table->integer('used_date')->default(0);
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index(['recipient_email', 'promo_code']);
+            $table->index(['email', 'promo_code']);
         });
     }
 

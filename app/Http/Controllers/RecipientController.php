@@ -32,7 +32,7 @@ class RecipientController extends Controller
      */
     public function index()
     {
-        $recipients = $this->repository->paginate(50);
+        $recipients = $this->repository->orderBy('last_name')->orderBy('first_name')->paginate(50);
         if (request()->wantsJson()) {
             return $recipients;
         }
@@ -49,7 +49,7 @@ class RecipientController extends Controller
      */
     public function create()
     {
-        //
+        return view('recipient.create');
     }
 
     /**
@@ -73,7 +73,16 @@ class RecipientController extends Controller
      */
     public function show($id)
     {
-        return $this->repository->with('vouchers')->find($id);
+        $recipientVouchers = $this->repository->with(['vouchers'])->find($id);
+        if (request()->wantsJson()) {
+            return $recipientVouchers;
+        }
+
+        $data = [
+          'recipient' => $recipientVouchers
+        ];
+
+        return view('recipient.recipient_vouchers', $data);
     }
 
     /**

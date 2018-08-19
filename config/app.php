@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt-br',
 
     'supported_languages' => ['en' => 'English', 'de' => 'German', 'pt-br' => 'Portuguese (Brazil)'],
 

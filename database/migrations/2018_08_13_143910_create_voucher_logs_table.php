@@ -17,6 +17,7 @@ class CreateVoucherLogsTable extends Migration
     {
         Schema::create('voucher_logs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('offer_id');
             $table->string('used_email');
             $table->string('promo_code');
             $table->string('short_message');

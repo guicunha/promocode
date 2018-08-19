@@ -45,9 +45,18 @@ class OfferController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function dashBoard()
+    {
+        $offers = $this->repository->paginate(50);
+        $data = ['offers' => $offers];
+
+        return view('layout.dashboard', $data);
+    }
+
     public function create()
     {
-        //
+        return view('offer.create');
     }
 
     /**
@@ -59,7 +68,11 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
-        $this->service->create($request->all());
+        $offer_created = $this->service->create($request->all());
+
+        return redirect()->action(
+          'OfferController@show', ['id' => $offer_created->id]
+        );
     }
 
     /**
@@ -71,7 +84,15 @@ class OfferController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $offer = $this->service->show($id);
+        if (request()->wantsJson()) {
+            return $offer;
+        }
+
+        $data = ['offer' => $offer];
+
+        return view('offer.offer_show', $data);
     }
 
     /**

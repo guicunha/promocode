@@ -11,7 +11,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
-class offersTest extends TestCase
+class recipientTest extends TestCase
 {
     use DatabaseMigrations;
 

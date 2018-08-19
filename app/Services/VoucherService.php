@@ -52,8 +52,10 @@ class VoucherService
         return $this->createAllVouchers($offerData);
     }
 
-    public function disableVoucher(array $vouchers)
+    public function disableRecipientVoucher(array $vouchers)
     {
+
+        //TO-DO
     }
 
     private function createAllVouchers(Offer $offer)
@@ -80,8 +82,7 @@ class VoucherService
 
     private function generatePromoCode(Offer $offer)
     {
-        $hash = $this->random_alphanumeric_string(rand(7, 9), 3);
-
+        $hash = $this->randomAlphanumericString(rand(7, 9), 3);
         return $offer->special_code.$hash;
     }
 
@@ -93,21 +94,14 @@ class VoucherService
     private function getRecipients()
     {
         $recipients = $this->recipientRepository->all();
-
         return $recipients;
     }
 
-    /**
-     * @param $length
-     * @param $repeats
-     *
-     * @return bool|string
-     */
-    public function random_alphanumeric_string($length, $repeats)
+    private function randomAlphanumericString($length, $repeats)
     {
         $now = new \DateTime();
         $chars = strtoupper(hash('sha256', $now->getTimestamp()));
-
         return substr(str_shuffle(str_repeat($chars, $repeats)), rand(0, 30), $length);
     }
+
 }

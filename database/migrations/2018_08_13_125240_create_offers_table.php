@@ -19,9 +19,11 @@ class CreateOffersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description')->nullable();
-            $table->integer('discount');
+            $table->integer('discount')->default(0);
             $table->string('special_code', 4);
-            $table->integer('expiration');
+            $table->boolean('is_multiplier')->default(false);
+            $table->boolean('is_enabled')->default(true);
+            $table->integer('expiration')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

@@ -26,9 +26,25 @@ class Offer extends Model implements Transformable
         'discount',
         'special_code',
         'expiration',
+        'is_multiplier',
+        'is_enabled'
     ];
 
+    protected $appends = ['on_time'];
+
     protected $dates = ['deleted_at'];
+
+    public function getOnTimeAttribute()
+    {
+        $now = new \DateTime();
+        $nowUnix = $now->getTimestamp();
+
+        if ($this->expiration > $nowUnix) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function vouchers()
     {
@@ -37,6 +53,6 @@ class Offer extends Model implements Transformable
 
     public function path()
     {
-        return '/offer' . $this->id;
+        return 'offer/' . $this->id;
     }
 }

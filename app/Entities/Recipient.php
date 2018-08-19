@@ -24,23 +24,25 @@ class Recipient extends Model implements Transformable
         'first_name',
         'last_name',
         'email',
+    ];
+
+    protected $visible = [
+        'first_name',
+        'last_name',
+        'email',
         'is_valid',
+        'vouchers',
     ];
 
     protected $dates = ['deleted_at'];
 
     public function vouchers()
     {
-        return $this->hasMany(Voucher::class, 'recipient_email', 'email');
-    }
-
-    public function logs()
-    {
-        return $this->hasMany(VoucherLog::class, 'recipient_email', 'email');
+        return $this->hasMany(Voucher::class, 'email', 'email');
     }
 
     public function path()
     {
-        return '/recipient' . $this->id;
+        return 'recipient/' . $this->id;
     }
 }

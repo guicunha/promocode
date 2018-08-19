@@ -22,11 +22,21 @@ class Voucher extends Model implements Transformable
      */
     protected $fillable = [
         'promo_code',
-        'recipient_email',
+        'email',
+        'offer_id',
+        'offer_name'
+    ];
+
+    protected $visible  = [
+        'promo_code',
+        'email',
         'offer_id',
         'offer_name',
         'expiration',
         'used_date',
+        'recipient_name',
+        'on_time',
+        'total',
     ];
 
     protected $appends = ['on_time'];
@@ -35,7 +45,7 @@ class Voucher extends Model implements Transformable
 
     public function recipient()
     {
-        return $this->hasOne(Recipient::class, 'email', 'recipient_email');
+        return $this->hasOne(Recipient::class, 'email', 'email');
     }
 
     /**
@@ -55,6 +65,6 @@ class Voucher extends Model implements Transformable
 
     public function path()
     {
-        return '/voucher' . $this->id;
+        return 'voucher/' . $this->id;
     }
 }

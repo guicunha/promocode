@@ -19,7 +19,7 @@ class VoucherLog extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
-        'used_email',
+        'email',
         'promo_code',
         'short_message',
         'message',
